@@ -1,0 +1,14 @@
+<%= simple_form_for @group do |f| %>
+  <div class="form-group">
+
+
+    <%= f.input :title, :label => "收款人" %>
+    <%= f.input :account, :label => "账号" %>
+    <%= f.input :location, :label => "汇入地点省份" %>
+    <%= f.input :bank, :label => "汇入行名称" %>
+    <%= f.input :money, :label => "金额" %>
+    <%= f.input :yougtu, :label => "用途" %>
+    <%= f.input :name, :label => "经办人" %>
+    </div>
+<%= f.submit "提交", class: "btn btn-primary", date: {disable_with: "Submiting..."} %>
+  <% end %>

@@ -1,0 +1,8 @@
+<div class="col-md-8 col-md-2">
+  <h3 class="text-center">说出您的问题</h3>
+  <hr>
+  <%= simple_form_for @post do |f| %>
+    <%= f.input :content %>
+    <%= f.submit "Submit", class: "btn btn-primary" %>
+  <% end %>
+</div>

@@ -1,0 +1,27 @@
+<div class="col-md-12">
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <td>#</td>
+        <td>文件名</td>
+      </tr>
+    </thead>
+    <tbody>
+      <% @resumes.each do |resume| %>
+        <tr>
+          <td>#</td>
+          <td><%= resume.content %></td>
+  <td>
+            <% if resume.attachment.present? %>
+              <i class="fa fa-paperclip"></i>
+              <%= link_to("点击下载", resume.attachment_url) %>
+            <% else %>
+              No Attachment
+            <% end %>
+            </td>
+
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>

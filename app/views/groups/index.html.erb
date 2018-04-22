@@ -1,0 +1,40 @@
+<div class="col-md-12">
+  <div class="group">
+    <%= link_to("我要付款", new_group_path, class: "btn btn-primary pull-right") %>
+  </div>
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <td>#</td>
+        <td>收款人</td>
+        <td>账号</td>
+        <td>汇入省份</td>
+        <td>汇入行名称</td>
+        <td>金额</td>
+        <td>用途</td>
+        <td>经办人</td>
+      </tr>
+    </thead>
+    <tbody>
+      <% @groups.each do |group| %>
+        <tr>
+          <td>#</td>
+          <td><%= link_to(group.title, group_path(group)) %></td>
+          <td><%= group.account %></td>
+          <td><%= group.location %></td>
+          <td><%= group.bank %></td>
+          <td><%= group.money %></td>
+          <td><%= group.yougtu %></td>
+          <td><%= group.name %></td>
+
+
+          <td>
+              <%= link_to("修改", edit_group_path(group), class: "btn btn-sm btn-default")%>
+              <%= link_to("删除", group_path(group),    class: "btn btn-sm btn-default",
+                          method: :delete, data: { confirm: "Are you sure?" } )%>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
