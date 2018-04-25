@@ -15,9 +15,9 @@
           <td>#</td>
           <td><%= link_to(post.content, post_path(post)) %></td>
           <td>
-              <%= link_to("Edit", edit_post_path(post), class: "btn btn-sm btn-default")%>
-              <%= link_to("Delete", post_path(post),    class: "btn btn-sm btn-default",
-                          method: :delete, data: { confirm: "Are you sure?" } )%>
+              <%= link_to("编辑", edit_post_path(post), class: "btn btn-sm btn-default")%>
+              <!-- <%= link_to("Delete", post_path(post),    class: "btn btn-sm btn-default",
+                          method: :delete, data: { confirm: "Are you sure?" } )%> -->
           </td>
         </tr>
       <% end %>
