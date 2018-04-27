@@ -184,7 +184,7 @@ header.masthead h2 {
   header.masthead {
     padding-top: calc(6rem + 106px);
     padding-bottom: 6rem;
-    margin-top: -50px;
+    margin-top: -20px;
   }
   header.masthead h1 {
     font-size: 4.75em;
