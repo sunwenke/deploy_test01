@@ -1,4 +1,5 @@
 <div class="col-md-12">
+
   <div class="group">
     <%= link_to("我要付款", new_group_path, class: "btn btn-primary pull-right") %>
   </div>
@@ -13,6 +14,7 @@
         <td>金额</td>
         <td>用途</td>
         <td>经办人</td>
+        <td>Creator </td>
       </tr>
     </thead>
     <tbody>
@@ -26,15 +28,19 @@
           <td><%= group.money %></td>
           <td><%= group.yougtu %></td>
           <td><%= group.name %></td>
+          <td> <%= group.user.email %> </td>
 
 
           <td>
-              <!-- <%= link_to("修改", edit_group_path(group), class: "btn btn-sm btn-default")%> -->
+            <% if current_user && current_user == group.user %>
+              <%= link_to("修改", edit_group_path(group), class: "btn btn-sm btn-default")%>
               <%= link_to("删除", group_path(group),    class: "btn btn-sm btn-default",
                           method: :delete, data: { confirm: "Are you sure?" } )%>
+              <% end %>
           </td>
         </tr>
       <% end %>
     </tbody>
   </table>
+
 </div>
