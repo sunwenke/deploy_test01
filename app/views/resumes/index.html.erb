@@ -14,10 +14,12 @@
         <tr>
           <td>#</td>
           <td><%= resume.content %></td>
-  <td>
+           <td>
             <% if resume.attachment.present? %>
               <i class="fa fa-paperclip"></i>
               <%= link_to("点击下载", resume.attachment_url) %>
+              <%= link_to("删除", resume_path(resume),    class: "btn btn-sm btn-default",
+                          method: :delete, data: { confirm: "Are you sure?" } )%>
             <% else %>
               No Attachment
             <% end %>
